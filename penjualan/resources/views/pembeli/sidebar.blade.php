@@ -33,7 +33,7 @@
                        <br>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4><a href="" id="on">Popular Iklan</a></h4>
+                            <h4><a href="" id="on">Product </a></h4>
                         </div>
                         <div class="panel-body" id="off">
                             <ul class="popular-posts" >

@@ -23,6 +23,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/bootstrap.min.js"></script>
      <script src="/jquery-ui/jquery-ui.min.js"></script>
+      <script src="/js/app.js"></script>
 </body>
 </html>
                   @section('slidetoggle')
@@ -37,7 +38,9 @@
       $("#off").slideToggle();
       return false;
     });
-
+ window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
     </script>
 
  @endsection

@@ -10,16 +10,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><strong >Toko</strong><i>ku</i><small>.com</small></a>
+              <a class="navbar-brand" href="{{route('pembeli')}}"><strong >Toko</strong><i>ku</i><small>.com</small></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="the-navbar-collapse">
             
               <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="{{route('pembeli')}}" class="">Home</a>
+                <li class="{{Request::segment(1)== "" ? "active" :""}}"><a href="{{route('pembeli')}}" class="">Home</a>
                 </li>
-                 <li><a href="#">Login</a></li>
+                 <li class="{{Request::segment(1)== "/login" ? "active" :""}}"><a href="{{ url('/login') }}">Login</a></li>
+                 <li class="{{Request::segment(1)== "register" ? "active" :""}}"><a href="{{ url('/register') }}">Register</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
