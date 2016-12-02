@@ -1,6 +1,4 @@
  @include('layouts.partials.header')
- <link href="/css/app.css" rel="stylesheet">
-    <div id="app">
     <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -15,7 +13,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                   <a class="navbar-brand" href="{{route('pembeli')}}"><strong >Toko</strong><i>ku</i><small>.com</small></a>
+                    @if(!Auth::guest())
+                    <a class="navbar-brand" href="{{url('/home')}}"><strong >Toko</strong><i>ku</i><small>.com</small></a>
+                    @else
+                    <a class="navbar-brand" href="{{route('pembeli')}}"><strong >Toko</strong><i>ku</i><small>.com</small></a>
+                    @endif
+                   
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -30,6 +33,8 @@
                         
 
                         @if(!Auth::guest())
+                          
+                          
                           @include('layouts.dropdown')
                            @else
                           <li class="{{Request::segment(1)== "pembeli" ? "active" :""}}"><a href="{{route('pembeli')}}" class="">Home</a>
@@ -47,11 +52,8 @@
 
         @yield('content')
     </div>
-
+@include('layouts.partials.footer')
     <!-- Scripts -->
-   <script src="/js/jquery.min.js"></script>
-    <script src="/js/app.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-     <script src="/jquery-ui/jquery-ui.min.js"></script>
-</body>
-</html>
+
+     @yield('slidetoggle')
+

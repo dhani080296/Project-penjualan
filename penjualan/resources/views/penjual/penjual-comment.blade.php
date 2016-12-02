@@ -3,24 +3,17 @@
                 <div class="comment-footer padding-10">
                              
                         <h3>Leave a comment</h3>
-                        {!! Form::model($iklan->id,[
+                        {!! Form::model($comments,[
                                 'method'=>'POST',
-                            'route'=>'pembeli.store'])  !!}
+                            'route'=>'home.store'])  !!}
                             <div class="form-group {{$errors->has('name') ? 'has-error' : ''}}">
                                <input type="text" class="form-control" value="{{$iklan->id}}" style="display: none;" name="iklan_id">
-                                {!! Form::label('Name') !!}
-                                {!! Form::text('name',null,['class'=>'form-control']) !!}
-                                @if($errors->has('name'))
-                                <span class="help-block">{{$errors->first('name')}}</span>
-                                @endif
+                              
+                                <input type="text" class="form-control" value="{{Auth::user()->name}}" style="display: none;" name="name">
+                                <input type="text" class="form-control" value="{{Auth::user()->email}}" style="display: none;" name="email">
+                               
                             </div>
-                            <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
-                                {!! Form::label('Email') !!}
-                                {!! Form::email('email',null,['class'=>'form-control']) !!}
-                                @if($errors->has('email'))
-                                <span class="help-block">{{$errors->first('email')}}</span>
-                                @endif
-                            </div>
+                           
                             <div class="form-group {{$errors->has('comment') ? 'has-error' : ''}}">
                                 {!! Form::label('Comment') !!}
                                 {!! Form::textarea('comment',null,['class'=>'form-control']) !!}

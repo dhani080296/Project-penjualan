@@ -27,8 +27,7 @@ class Iklans extends Migration
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
             $table->integer('price');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('restrict');
+            
              $table->integer('view_count');
               });
               

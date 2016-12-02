@@ -39,3 +39,8 @@ Route::get('admin_login','AdminAuth\LoginController@showLoginForm');
   
 Route::get('/home', 'HomeController@index');
 Route::get('/admin_home', 'AdminHomeController@index');
+Route::get('/penjual/{iklan}',['uses'=>'HomeController@show','as'=>'penjual.show']
+);
+Route::resource('pembeli','pembeliController');
+Route::resource('penjualiklan','PenjualController');
+Route::resource('home','HomeController');

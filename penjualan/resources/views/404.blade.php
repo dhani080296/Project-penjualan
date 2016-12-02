@@ -8,7 +8,8 @@
         <div class="widget">
             <div class="widget-heading" align="center">    <h1 class="ac">404</h1>
                  <h2 class="ao">Page Not Found.</h2>
-            <p>Sorry, the page you're looking for couldn't be found</p>
+            <p>Sorry, the page you're looking for couldn't be found
+             or wait for a few minutes...</p>
             
             </div>
             

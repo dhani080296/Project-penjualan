@@ -1,5 +1,5 @@
                         
-      
+             
                     <div class="search-widget">
                     <form action="{{route('pembeli')}}" role="search" id=".ui-autocomplete">
                     <div class="input-group">
@@ -12,9 +12,9 @@
                         </div>
                         </form> <!-- /input-group -->
                     </div>
-                    
 
-                        <div class="panel panel-default">
+            
+                    <div class="panel panel-default">
                         <div class="panel-heading" >
                             <h4><a href="" id="slide">Categories</a></h4>
                         </div>
@@ -30,7 +30,10 @@
                             </ul>
                         </div>
                     </div>
+                       
+                        
                        <br>
+                      
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4><a href="" id="on">Product </a></h4>
@@ -63,6 +66,7 @@
                             </ul>
                         </div>
                     </div>
+                  
                     
  @section('form-script')
   <script>

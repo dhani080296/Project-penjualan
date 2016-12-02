@@ -23,8 +23,6 @@ a:hover {
     text-decoration: none;
 }
 
-
-
 /*.navbar-brand,
 .navbar-nav li a {
     padding: 25px;
@@ -46,8 +44,30 @@ time, .gh{
 small{
 font-size: 8px;
 }
-.bt{
-    
+div .lg{
+height: 450px;
+}
+div .ht{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+#title, #slug{
+    width: 550px;
+}
+#phone,#bbm{
+    width: 150px;
+    text-transform: uppercase;
+}
+.bg:hover .buttons{
+     display: block;
+}
+.buttons{
+  position: absolute;
+  text-align: center;
+  display: none;
+}
+#category_id,#price,#datetimepicker{
+    width: 200px;
 }
 header .navbar-default{
       -moz-box-shadow: rgba(0,0,0,0.50) 0 10px 0;
@@ -374,6 +394,7 @@ ul.tags li a:hover {
 footer {
     border-top: 1px solid #e7e7e7;
     padding: 15px 0;
+
 }
 
 footer p {

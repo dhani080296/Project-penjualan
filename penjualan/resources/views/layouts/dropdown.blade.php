@@ -1,3 +1,5 @@
+  <li class="{{Request::segment(1)== "home" ? "active" :""}}"><a href="{{url('/home')}}" class="">Home</a>
+  <li class="{{Request::segment(2)== "create" ? "active" :""}}"><a href="{{route("penjualiklan.create")}}" class="">Tambah Iklan Product</a>
   <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

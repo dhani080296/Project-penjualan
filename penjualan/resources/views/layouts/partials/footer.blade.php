@@ -4,16 +4,7 @@
                 <div class="col-md-8">
                     <p class="copyright">&copy; Ahmad Ramdhani</p>
                 </div>
-                <div class="col-md-4">
-                    <nav>
-                        <ul class="social-icons">
-                            <li><a href="#" class="i fa fa-facebook"></a></li>
-                            <li><a href="#" class="i fa fa-twitter"></a></li>
-                            <li><a href="#" class="i fa fa-google-plus"></a></li>
-                            <li><a href="#" class="i fa fa-github"></a></li>
-                        </ul>
-                    </nav>
-                </div>
+                
             </div>
         </div>
     </footer>
@@ -23,7 +14,9 @@
     <script src="/js/app.js"></script>
     <script src="/js/bootstrap.min.js"></script>
      <script src="/jquery-ui/jquery-ui.min.js"></script>
-      <script src="/js/app.js"></script>
+      <script src="/datetimepicker/build/jquery.datetimepicker.full.js"></script>
+      <script src="/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+      
 </body>
 </html>
                   @section('slidetoggle')
@@ -38,9 +31,22 @@
       $("#off").slideToggle();
       return false;
     });
- window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+
+$('ul.pagination').addClass('no-margin pagination-sm');
+$('#title').on('blur',function(){
+ var theTitle=this.value.toLowerCase().trim(),
+ slugInput=$('#slug'),
+theSlug=theTitle.replace(/&/g,'-and-')
+.replace(/[^a-z0-9-]+/g,'-')
+.replace(/\-\-+/g,'-').replace(/^-+|-+$/g, '');
+
+ slugInput.val(theSlug);
+
+});
+jQuery('#datetimepicker').datetimepicker({
+  format:'Y-m-d H:i:s',
+  lang:'ru'
+});
     </script>
 
  @endsection

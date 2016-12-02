@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
        Route::bind('iklan', function($slug){
+        
             return Iklan::published()->where('slug',$slug)->first();
         });
     }
