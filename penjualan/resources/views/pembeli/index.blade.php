@@ -53,7 +53,6 @@
                                     <li><i class="glyphicon glyphicon-user"></i><a href="{{route('user',$iklan->user->slug)}}" class="gh">{{$iklan->user->name}}</a></li>
                                     <li><i class="glyphicon glyphicon-time"></i><time>{{$iklan->date}}</time></li>
                                     <li><i class="glyphicon glyphicon-folder-open"></i><a href="{{ route('category', $iklan->category->slug)}}" class="gh"> {{$iklan->category->title}}</a></li>
-                                   
                                     <li><i class="glyphicon glyphicon-comment" class="gh"></i><a href="#" " class="gh">4 Comments</a></li>
                                      <?php $iklanCount=$iklan->user->iklans()->published()->count() ?>
                                     <li><i class="glyphicon glyphicon-th-list"></i><a href="{{route('user',$iklan->user->slug)}}" class="gh"> {{$iklanCount}} {{str_plural('Post',$iklanCount)}}</a></li>

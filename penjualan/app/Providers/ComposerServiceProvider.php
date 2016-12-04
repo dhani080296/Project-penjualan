@@ -17,6 +17,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         
         view()->composer('pembeli.sidebar',NavigationComposer::class);
+        
        
     }
 

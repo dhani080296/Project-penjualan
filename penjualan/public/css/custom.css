@@ -23,6 +23,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 /*.navbar-brand,
 .navbar-nav li a {
     padding: 25px;
@@ -51,6 +52,18 @@ div .ht{
     text-transform: uppercase;
     font-size: 20px;
 }
+thead>tr>td{
+    text-align:center;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+tbody>tr>td{
+    font-size: 15px;
+}
+.tm{
+    text-align: center;
+}
 #title, #slug{
     width: 550px;
 }
@@ -66,8 +79,18 @@ div .ht{
   text-align: center;
   display: none;
 }
-#category_id,#price,#datetimepicker{
+.cv{
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  display: none;
+}
+#category_id,#price,#datetimepicker,#user_id{
     width: 200px;
+}
+
+.nh{
+
 }
 header .navbar-default{
       -moz-box-shadow: rgba(0,0,0,0.50) 0 10px 0;
@@ -101,7 +124,7 @@ div .panel-footer{
 }
 
 header .navbar-default,footer,div .panel-heading,div .clearfix ,.post-comments,
-.post-author, div .comment-footer 
+.post-author, div .comment-footer, div .tb 
 {
     background: #fcfcfc  url("../img/head.png");
   

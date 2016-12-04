@@ -21,11 +21,13 @@
                         <div class="panel-body" id="slide-show">
                             <ul class="nav nav-pills nav-stacked" >
                             @foreach($categories as $category)
+                            @if($category->iklans->count())
                             <?php $selected_category= Request::segment(2); ?>
                                 <li class="{{$selected_category==$category->slug ? 'active':''}}">
                                     <a href="{{route('category',$category->slug)}}">{{$category->title}} <span class="badge pull-right">{{$category->iklans->count()}}</span></a>
                                     
                                 </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </div>

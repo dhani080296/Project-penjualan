@@ -47,5 +47,26 @@
     <script src="/js/app.js"></script>
     <script src="/js/bootstrap.min.js"></script>
      <script src="/jquery-ui/jquery-ui.min.js"></script>
+     <script src="/datetimepicker/build/jquery.datetimepicker.full.js"></script>
+      <script src="/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+     <script>
+         $('ul.pagination').addClass('no-margin pagination-sm');
+$('#title').on('blur',function(){
+ var theTitle=this.value.toLowerCase().trim(),
+ slugInput=$('#slug'),
+theSlug=theTitle.replace(/&/g,'-and-')
+.replace(/[^a-z0-9-]+/g,'-')
+.replace(/\-\-+/g,'-').replace(/^-+|-+$/g, '');
+
+ slugInput.val(theSlug);
+
+});
+jQuery('#datetimepicker').datetimepicker({
+  format:'Y-m-d H:i:s',
+  lang:'ru'
+});
+
+
+     </script>
 </body>
 </html>

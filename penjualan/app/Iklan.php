@@ -7,7 +7,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 use Carbon\Carbon;
 class Iklan extends Model
 {   
-    protected  $fillable=['title','slug','body','phone','bbm','address','price','published_at','category_id','image'];
+    protected  $fillable=['title','slug','body','phone','bbm','address','price','published_at','category_id','image','user_id'];
     protected $dates=['published_at'];
     public function getImageUrlAttribute($value){
     	$imageUrl="";
@@ -62,9 +62,9 @@ class Iklan extends Model
        if(! $this->published_at){
         return '<span class="label label-warning">Draft</span>';
        } elseif($this->published_at && $this->published_at->isFuture()){
-        return '<span class="label label-info">Schedule</span>';
+        return '<span class="label label-info">Belum Diterbitkan</span>';
        }else{
-        return '<span class="label label-success">Published</span>';
+        return '<span class="label label-success">Sudah Diterbitkan</span>';
        }
     }
     public function setPublishedAtAttribute($value){

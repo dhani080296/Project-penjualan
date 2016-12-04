@@ -41,6 +41,7 @@ class PembeliController extends Controller
             
          }
         })->latestFirst()->published()->paginate($this->limit);
+        
     return view("pembeli.index",compact('iklans'));	
     }
     public function show(Iklan $iklan,Comment $comment){

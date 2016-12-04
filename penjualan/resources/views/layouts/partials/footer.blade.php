@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class="copyright">&copy; Ahmad Ramdhani</p>
+                    <p class="copyright">&copy; Ahmad Ramdhani, Fauzan, dan Ronie</p>
                 </div>
                 
             </div>

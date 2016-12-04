@@ -25,7 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    protected $limit=3;
+    protected $limit=5;
     public function index(Request $request)
     {  
         

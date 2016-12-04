@@ -40,8 +40,6 @@
                           <li class="{{Request::segment(1)== "pembeli" ? "active" :""}}"><a href="{{route('pembeli')}}" class="">Home</a>
                            <li class="{{Request::segment(1)== "login" ? "active" :""}}"><a href="{{ url('/login') }}">Login</a></li>
                            <li class="{{Request::segment(1)== "register" ? "active" :""}}"><a href="{{ url('/register') }}">Register</a></li>
-                           <li><a href="#">About</a></li>
-                           <li><a href="#">Contact</a></li>
                         @endif 
                     </ul>
                 </div>

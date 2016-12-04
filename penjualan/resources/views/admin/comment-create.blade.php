@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin-app')
 
 @section('content')
 <div class="container">
@@ -8,12 +8,12 @@
                 
 
              
-                {!! Form::model($iklan,['method'=>'POST','route'=>'penjualiklan.store','files'=>true]) !!}
+                {!! Form::model($comment,['method'=>'POST','route'=>'admincomment.store','files'=>true]) !!}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                <h4 class="ht">Tambah Data Iklan Product</h4>
+                <h4 class="ht">Tambah Data Comment</h4>
                 </div>
-                @include('penjual.penjual-form')
+                @include('admin.comment-form')
             </div>
 
             {!!Form::close()!!}
@@ -29,9 +29,9 @@
         </div>
         <div class="col-md-4">
                 <aside class="right-sidebar">
-                    
+                   @include('admin.admin-sidebar') 
 
-                    @include('penjual.penjual-sidebar')
+                   
                 </aside>
     </div>
 </div>

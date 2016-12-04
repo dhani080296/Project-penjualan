@@ -45,7 +45,10 @@
                      {!!Form::open(['method'=>'DELETE','route'=>['penjualiklan.destroy',$iklan->id]])!!}
                         <a href="{{route('penjualiklan.edit',$iklan->id)}}" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
                         <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');" type="submit"><i class="glyphicon glyphicon-remove"></i></button>
+                        &nbsp; 
+                            {!!$iklan->publicationLabel()!!}
                      {!!Form::close()!!}
+
                     </div>
                             <p align="right">{{$iklan->address}} </p>
                 </div>

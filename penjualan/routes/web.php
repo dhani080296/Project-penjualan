@@ -39,8 +39,16 @@ Route::get('admin_login','AdminAuth\LoginController@showLoginForm');
   
 Route::get('/home', 'HomeController@index');
 Route::get('/admin_home', 'AdminHomeController@index');
+Route::get('/admin_comment', 'AdminHomeController@comment');
+Route::get('/admin_user', 'AdminHomeController@user');
+Route::get('/admin_iklan', 'AdminHomeController@iklan');
 Route::get('/penjual/{iklan}',['uses'=>'HomeController@show','as'=>'penjual.show']
 );
 Route::resource('pembeli','pembeliController');
 Route::resource('penjualiklan','PenjualController');
 Route::resource('home','HomeController');
+Route::resource('admincategory','CategoryController');
+Route::resource('admincomment','CommentController');
+Route::resource('adminuser','UserController');
+Route::resource('adminiklan','IklanController');
+Route::resource('admin','AdminController');

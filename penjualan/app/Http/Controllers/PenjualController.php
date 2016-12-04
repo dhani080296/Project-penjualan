@@ -16,13 +16,13 @@ class PenjualController extends Controller
         $this->middleware('auth');
         $this->uploadPath=public_path(config('cms.image.directory'));
     }
-    public function create(){
-    	return view("penjual.penjual-create");
+    public function create(Iklan $iklan){
+    	return view("penjual.penjual-create",compact('iklan'));
     }
     public function store(Requests\IklanRequest $request){
    		$data= $this->handleRequest($request);
         $request->user()->iklans()->create($data);
-        return redirect('home')->with('message','Iklan Product berhasil di publish!');
+        return redirect('home')->with('message','Iklan Product berhasil di Tambah!');
     }
     private function handleRequest($request){
         $data=$request->all();
@@ -58,7 +58,7 @@ class PenjualController extends Controller
     if($oldImage !== $iklan->image){
     		$this->removeImage($oldImage);
     	}
-    	return redirect('home')->with('message','Iklan Product Berhasil di update!');
+    	return redirect('home')->with('message','Iklan Product Berhasil di Edit!');
 
     }
     private function removeImage($image){
@@ -77,7 +77,7 @@ class PenjualController extends Controller
     $this->authorize('modify',$iklan);
     $iklan->delete();
     $this->removeImage($iklan->image);
-    return redirect('home')->with('message','Iklan Product bergasil di delete!');
+    return redirect('home')->with('message','Iklan Product bergasil di Hapus!');
     }
 
 }

@@ -16,14 +16,14 @@
              
                 <div class="panel-heading">
                 <div class="col-md-10">
-                    <h4>Category <label for="" class="label label-info">{{$categorycount}} data</label></h4> 
+                    <h4>Comment <label for="" class="label label-info">{{$commentcount}} data</label></h4> 
                 </div>
-                    <a  href="{{route('admincategory.create')}}" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Tambah</a>
+                    <a  href="{{route('admincomment.create')}}" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Tambah</a>
                 
                 </div>
                 
                 <div class="panel-body">
-                             @if(!$categories->count())
+                        @if(!$comment->count())
             <div class="alert alert-warning">
                 <p>Nothing Found</p>
             </div>
@@ -33,29 +33,29 @@
                           <tr>
                          <td width="40">No.</td>
                           <td width="150">Action</td>
-                           <td width="200">Category</td>
-                           <td width="120">Jumlah product iklan</td>
+                           <td width="200">Name</td>
+                           <td width="120">email</td>
                           
                            
                            </tr> 
                        </thead>
                        <?php $i=1 ?>
-                       @foreach($categories as $category)
-           
+                       @foreach($comment as $com)
+                       
                            <tbody>
                                <tr class="tb">
                                <td>{{$i++}}</td>
                                    <td class="tm">
                                     <div class="">
                        
-                     {!!Form::open(['method'=>'DELETE','route'=>['admincategory.destroy',$category->id]])!!}
-                        <a href="{{route('admincategory.edit',$category->id)}}" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                     {!!Form::open(['method'=>'DELETE','route'=>['admincomment.destroy',$com->id]])!!}
+                        <a href="{{route('admincomment.edit',$com->id)}}" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
                         <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');" type="submit"><i class="glyphicon glyphicon-remove"></i></button>
                      {!!Form::close()!!}
                     </div>
                                    </td>
-                                   <td>{{$category->title}}</td>
-                                   <td class="tm">{{$category->iklans->count()}}</td>
+                                   <td>{{$com->name}}</td>
+                                   <td class="tm">{{$com->email}}</td>
                                </tr>
                            </tbody>
                        @endforeach
@@ -66,7 +66,7 @@
                 <div class="panel-footer sc post-meta padding-10 clearfix">
                     <nav>
                   <ul class="pager nav navbar-right">
-                    {{$categories->links()}}
+                    {{$comment->links()}}
                   </ul>
                 </nav>
                 </div>
